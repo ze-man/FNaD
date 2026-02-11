@@ -1,0 +1,129 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    color: white;
+    text-align: center;
+    background-color: black;
+}
+
+#startup-screen, #menu-screen {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.twitch {
+    width: 300px;
+    animation: twitch 0.1s infinite alternate;
+}
+
+@keyframes twitch {
+    0% { transform: translate(0, 0) rotate(0deg); }
+    100% { transform: translate(2px, -2px) rotate(1deg); }
+}
+
+.office-bg {
+    background-image: url('https://cdn.shopify.com/s/files/1/0886/2006/files/Fnaf-B.png?10249878917742128759');
+    background-size: cover;
+    height: 100vh;
+    position: relative;
+}
+
+#time, #power, #night-info {
+    position: absolute;
+    top: 10px;
+}
+
+#time { left: 10px; }
+#power { right: 10px; }
+#night-info { left: 50%; transform: translateX(-50%); }
+
+button {
+    padding: 10px;
+    margin: 5px;
+    background: #333;
+    color: white;
+    border: 1px solid red;
+}
+
+#left-door, #left-light {
+    position: absolute;
+    bottom: 100px;
+    left: 10px;
+}
+
+#right-door, #right-light {
+    position: absolute;
+    bottom: 100px;
+    right: 10px;
+}
+
+#camera-btn {
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+#camera-view {
+    position: absolute;
+    top: 20%;
+    left: 20%;
+    width: 60%;
+    height: 60%;
+    background: black;
+    border: 2px solid green;
+}
+
+#cam-display {
+    width: 100%;
+    height: 80%;
+    position: relative;
+}
+
+#cam-display img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.diddy-in-cam {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 200px;
+}
+
+.static-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0.3;
+    pointer-events: none;
+}
+
+#jumpscare {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: black;
+    z-index: 100;
+}
+
+#jumpscare img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+.lore {
+    font-style: italic;
+    max-width: 400px;
+    margin: 20px auto;
+}
