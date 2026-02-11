@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Five Nights at Diddy's</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="startup-screen">
+        <h1>Five Nights at Diddy's</h1>
+        <img src="https://nintendosoup.com/wp-content/uploads/2025/05/donkeykong-diddykong-new-art-may212025.webp" alt="Diddy Kong" class="twitch">
+        <button onclick="startMenu()">Start</button>
+    </div>
+    <div id="menu-screen" style="display: none;">
+        <h1>Select Night</h1>
+        <button onclick="startGame(1)">Night 1</button>
+        <button onclick="startGame(2)">Night 2</button>
+        <button onclick="startGame(3)">Night 3</button>
+        <button onclick="startGame(4)">Night 4</button>
+        <button onclick="startGame(5)">Night 5</button>
+        <button onclick="startGame(6)">Night 6</button>
+        <button onclick="showCustom()">Custom Night</button>
+        <div id="custom-menu" style="display: none;">
+            <label for="diddy-level">Diddy's AI Level (0-20):</label>
+            <input type="number" id="diddy-level" min="0" max="20" value="10">
+            <button onclick="startCustom()">Start Custom</button>
+        </div>
+        <p class="lore">Lore: In the abandoned Kong Jungle Arcade, a child's spirit haunts Diddy Kong. Survive his wrath!</p>
+    </div>
+    <div id="game-screen" style="display: none;" class="office-bg">
+        <div id="time">12 AM</div>
+        <div id="power">Power: 100%</div>
+        <div id="night-info">Night 1</div>
+        <button id="left-door" onclick="toggleLeftDoor()">Close Left Door</button>
+        <button id="left-light" onclick="toggleLeftLight()">Left Light</button>
+        <button id="right-door" onclick="toggleRightDoor()">Close Right Door</button>
+        <button id="right-light" onclick="toggleRightLight()">Right Light</button>
+        <button id="camera-btn" onclick="toggleCameras()">Cameras</button>
+        <div id="camera-view" style="display: none;">
+            <button onclick="viewCam('stage')">Stage</button>
+            <button onclick="viewCam('left-hall')">Left Hall</button>
+            <button onclick="viewCam('right-hall')">Right Hall</button>
+            <div id="cam-display"></div>
+            <img src="https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/9a494b12-0ae6-4522-99c0-b4b7f08d9047/d9r0qpv-0badc01c-1db9-4146-9361-e869b3931d43.gif?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7InBhdGgiOiIvZi85YTQ5NGIxMi0wYWU2LTQ1MjItOTljMC1iNGI3ZjA4ZDkwNDcvZDlyMHFwdi0wYmFkYzAxYy0xZGI5LTQxNDYtOTM2MS1lODY5YjM5MzFkNDMuZ2lmIn1dXSwiYXVkIjpbInVybjpzZXJ2aWNlOmZpbGUuZG93bmxvYWQiXX0.t3SJI6vHtTpnCfM9ogBfxeuFW9rM2Q4V2De4GabFKyw" class="static-overlay" alt="Static">
+        </div>
+        <div id="jumpscare" style="display: none;">
+            <img src="https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/74161c24-3cc3-4cae-814a-2b33c969f68e/dk6iqfg-e89b1e7d-053f-4075-bcb7-1a5393976057.jpg/v1/fill/w_1920,h_1440,q_75,strp/donkey_kong_snake_bananza__by_chemicalbakery_dk6iqfg-fullview.jpg?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7ImhlaWdodCI6Ijw9MTQ0MCIsInBhdGgiOiIvZi83NDE2MWMyNC0zY2MzLTRjYWUtODE0YS0yYjMzYzk2OWY2OGUvZGs2aXFmZy1lODliMWU3ZC0wNTNmLTQwNzUtYmNiNy0xYTUzOTM5NzYwNTcuanBnIiwid2lkdGgiOiI8PTE5MjAifV1dLCJhdWQiOlsidXJuOnNlcnZpY2U6aW1hZ2Uub3BlcmF0aW9ucyJdfQ.U7ArhhXgNAF0w1RXVhXUCHn8ZF7ZujmkfEaXWbyNqu4" alt="Jumpscare">
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
